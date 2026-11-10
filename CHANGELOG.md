@@ -17,6 +17,7 @@ the following form: YYYY.0M.0D.
 - Designed a Playlist component (position-based sequence of songs)
 - Designed a PlaybackQueue component (history and up-next song queue)
 - Designed a SongLibrary component (title-keyed collection of songs)
+- Designed a proof of concept for Playlist component
 
 ## [2026.07.06]
 
