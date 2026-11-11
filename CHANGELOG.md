@@ -15,6 +15,7 @@ the following form: YYYY.0M.0D.
 ### Added
 
 - Designed abstract class for Playlist component
+- Designed kernel implementation for Playlist component (Playlist1L)
 
 ## [2026.11.10]
 
