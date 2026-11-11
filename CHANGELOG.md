@@ -10,6 +10,12 @@ the following form: YYYY.0M.0D.
 
 - Fixed an issue where the course URLs dropped the `web-sw1` paths
 
+## [2026.11.11]
+
+### Added
+
+- Designed abstract class for Playlist component
+
 ## [2026.11.10]
 
 ### Added
@@ -19,6 +25,8 @@ the following form: YYYY.0M.0D.
 - Designed a SongLibrary component (title-keyed collection of songs)
 - Designed a proof of concept for Playlist component
 - Designed kernel and enhanced interfaces for Playlist component
+
+- Designed abstract class for Playlist component
 
 ## [2026.07.06]
 
