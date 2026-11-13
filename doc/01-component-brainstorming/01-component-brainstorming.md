@@ -1,12 +1,10 @@
 # Portfolio Part 1: Component Brainstorming
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) then delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) then delete this comment -->
-- **Due Date**: <!-- TODO: fill with due date and time (e.g., 10/17 @ 3:10 PM EST) then delete this comment -->
+- **Name**: Pratyush Mundadi
+- **Dot Number**: mundadi.1
+- **Due Date**: 11/13 @11:59PM
 
 ## Assignment Overview
-
-<!-- TODO: read the assignment overview then delete this comment -->
 
 The overall goal of the portfolio project is to have you design and implement
 your own OSU component. There are no limits to what you choose to design and
@@ -29,8 +27,6 @@ implement.
 
 ## Assignment Checklist
 
-<!-- TODO: browse the checklist then delete this comment -->
-
 To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
 opening the TODOs window from the sidebar. The icon looks like a tree and will
@@ -52,8 +48,6 @@ to the tree diagram (you may remove this one as well):
 
 ## Assignment Learning Objectives
 
-<!-- TODO: read the assignment learning objectives then delete this comment -->
-
 Without learning objectives, there really is no clear reason why a particular
 assessment or activity exists. Therefore, to be completely transparent, here is
 what we're hoping you will learn through this particular aspect of the portfolio
@@ -67,12 +61,10 @@ project. Specifically, students should be able to:
 
 ## Assignment Rubric: 10 Points
 
-<!-- TODO: read the assignment rubric then delete this comment -->
-
 Again, to be completely transparent, most of the portfolio project, except the
 final submission, is designed as a formative assessment. Formative assessments
 are meant to provide ongoing feedback in the learning process. Therefore,
-the rubric is designed to assess the learning objectives *directly* in a way
+the rubric is designed to assess the learning objectives _directly_ in a way
 that is low stakes—meaning you shouldn't have to worry about the grade. Just
 do good work.
 
@@ -106,23 +98,20 @@ Below is further rationale/explanation for the rubric items above:
 > brainstorming. Plus it helps us get to know you better! Feel free to share
 > images in this section.
 
-<!-- TODO: briefly talk about your interests then delete this comment.
-Also, protip: you can preview what your response looks like by hitting
-the magnifying glass icon in the upper-right corner or pressing CTRL+K and
-then V. This kind of button combination is called a chord, for whatever
-reason -->
+I'm a computer science student at Ohio State. I enjoy listening to music and
+building small tools around the things I use every day, and I'm also interested
+in finance and investing. Long term, I want a software career where I build
+products people use daily. A music playlist is something I interact with
+constantly, so designing the component behind it keeps me motivated, and the
+list-like structure is small enough to finish in one semester.
 
 ## Assignment
-
-<!-- TODO: read the assignment section then delete this comment -->
 
 As previously stated, you are tasked with brainstorming 3 possible components.
 To aid you in this process, we have provided [some example components][example-components]
 that may help you in your brainstorming. All of these components were made at
 some point by one of your peers, so you should feel confident that you can
 accomplish any of them.
-
-<!-- TODO: browse the list of possible projects then delete this comment -->
 
 There is no requirement that you use any of the components listed above.
 If you want to model something else, go for it! Very common early object
@@ -142,8 +131,6 @@ list-like components that have different ways of manipulating the data. Think
 about different ways you might allow a client to manipulate your component.
 
 ### Example Component
-
-<!-- TODO: review this example component then delete this comment -->
 
 To help you brainstorm a few components, we've provided an example below of a
 component you already know well: NaturalNumber. We highly recommend that you
@@ -168,7 +155,7 @@ format, we can be more confident that your designs will be possible.
     - `NaturalNumber divide(NaturalNumber n)`: divides `this` by `n`, returning
       the remainder
     - ...
-  - **Additional Considerations** (*note*: "I don't know" is an acceptable
+  - **Additional Considerations** (_note_: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
       - Yes, basically all OSU components have to be mutable as long as they
@@ -180,7 +167,7 @@ format, we can be more confident that your designs will be possible.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
       - Yes. NaturalNumber is base 10, and we track that in a constant called
-          `RADIX`.
+        `RADIX`.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
       - Yes. The kernel methods `multiplyBy10` and `divideBy10` can be used to
@@ -211,68 +198,129 @@ will likely refine your design to make your implementation easier to use.
 
 > Please use this section to share your designs.
 
-- Component Design #1: <!-- TODO: give component a name then delete this comment -->
+- Component Design #1: `Playlist` (position-based sequence)
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - A `Playlist` models an ordered list of songs, like the queue in a music
+      app. A `Song` is a small immutable value (title, artist, duration in
+      seconds), so handing songs in and out of the playlist never creates
+      harmful aliases. The kernel only knows how to insert, remove, and count
+      songs by position. Everything fancier, like shuffling or merging, is
+      layered on top in the secondary interface.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - `void add(int pos, Song s)`: inserts `s` at position `pos` of `this`
+    - `Song remove(int pos)`: removes and returns the song at position `pos`
+    - `int length()`: reports the number of songs in `this`
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
-  - **Additional Considerations** (*note*: "I don't know" is an acceptable
+    - `boolean contains(Song s)`: reports whether `s` is in `this`
+    - `int totalDuration()`: reports the total runtime in seconds
+    - `void moveSong(int from, int to)`: moves a song to a new position
+    - `void reverse()`: reverses the order of the songs
+    - `void shuffle()`: randomly reorders the songs
+    - `void removeDuplicates()`: keeps only the first copy of each song
+    - `void append(Playlist p)`: adds all songs of `p` to the end of `this`
+      and clears `p`
+  - **Additional Considerations** (_note_: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. Like every component extending Standard, `clear`, `newInstance`,
+        and `transferFrom` mutate `this`, and `add`/`remove` change the
+        contents.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, a `Song` class holding title, artist, and duration. It would be
+        immutable so that returning or storing songs is safe.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Possibly a constant for an empty/placeholder song. Nothing else is
+        needed.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. `moveSong(from, to)` is `add(to, remove(from))`. `totalDuration`
+        removes each song, sums its duration, and puts it back (or rebuilds
+        into a temporary playlist). `reverse` removes songs from the end and
+        adds them to a temporary playlist, then transfers it back.
 
-- Component Design #2: <!-- TODO: give component a name then delete this comment -->
+- Component Design #2: `PlaybackQueue` (cursor-based, history and up-next)
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - A `PlaybackQueue` models what a music player actually does while it
+      plays: some songs have already been played (history), and some are
+      still coming up. The kernel only moves songs between those two sides,
+      like the left/right sides of the OSU `Sequence`-with-cursor idea. This
+      avoids indexing and keeps the kernel tiny.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - `void addToUpNext(Song s)`: adds `s` to the end of the up-next songs
+    - `Song playNext()`: moves the front up-next song into history and
+      returns it
+    - `Song playPrevious()`: moves the most recent history song back to the
+      front of up-next and returns it
+    - `int upNextLength()`: reports the number of songs still up next
+    - `int historyLength()`: reports the number of songs already played
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
-  - **Additional Considerations** (*note*: "I don't know" is an acceptable
+    - `void skip(int n)`: calls `playNext` `n` times
+    - `void restart()`: moves all of history back in front of up-next
+    - `void clearHistory()`: removes all played songs
+    - `Song peekNext()`: reports the next song without playing it
+    - `void repeatAll()`: after the queue ends, restarts from the beginning
+    - `void shuffleUpNext()`: randomly reorders the up-next songs
+    - `int remainingDuration()`: total seconds left in up-next
+  - **Additional Considerations** (_note_: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. Playing a song changes which side it lives on, and the Standard
+        methods mutate `this`.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, the same immutable `Song` class as in Design #1.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Maybe a `RepeatMode` enum (`OFF`, `ALL`) if I keep repeat as state
+        rather than an operation. I'm not sure yet.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. `skip(n)` loops `playNext`. `restart` loops `playPrevious` until
+        `historyLength()` is zero. `peekNext` does `playNext` followed by
+        `playPrevious`.
 
-- Component Design #3: <!-- TODO: give component a name then delete this comment -->
+- Component Design #3: `SongLibrary` (title-keyed, unordered collection)
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - A `SongLibrary` models a pool of songs identified by title, like "Liked
+      Songs", where order doesn't matter but lookup does. It behaves like a
+      Map from title to `Song`. The kernel handles adding, removing, and
+      looking up songs, and the secondary methods answer questions about the
+      collection as a whole.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - `void add(Song s)`: adds `s` to `this` (its title must not already be
+      present)
+    - `Song remove(String title)`: removes and returns the song with `title`
+    - `Song removeAny()`: removes and returns some arbitrary song
+    - `boolean hasSong(String title)`: reports whether a song with `title`
+      is in `this`
+    - `int size()`: reports the number of songs in `this`
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
-  - **Additional Considerations** (*note*: "I don't know" is an acceptable
+    - `int totalDuration()`: reports the total runtime in seconds
+    - `void mergeWith(SongLibrary other)`: moves all songs from `other` into
+      `this`
+    - `SongLibrary songsByArtist(String artist)`: returns a new library with
+      only that artist's songs
+    - `Song longestSong()`: reports the song with the greatest duration
+    - `void removeAllByArtist(String artist)`: removes every song by `artist`
+  - **Additional Considerations** (_note_: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, as with all Standard components.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, the immutable `Song` class. It could also reuse `Map.Pair` if
+        built on the OSU `Map`.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - No.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. `totalDuration` repeatedly calls `removeAny`, sums durations,
+        stores songs in a temporary library, then transfers them back.
+        `mergeWith` calls `removeAny` on `other` and `add` on `this` until
+        `other.size()` is zero.
 
 ## Post-Assignment
 
@@ -280,8 +328,6 @@ The following sections detail everything that you should do once you've
 completed the assignment.
 
 ### Changelog
-
-<!-- TODO: create CHANGELOG then delete this comment -->
 
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
@@ -330,11 +376,7 @@ all your work is there before submitting. For future assignments, you will
 just be submitting a link to a pull request. This will be the only time
 you have to submit any PDFs.
 
-<!-- TODO: upload a PDF of this document and the CHANGELOG to Carmen then delete this comment -->
-
 ### Peer Review
-
-<!-- TODO: review the peer review guidelines then delete this comment -->
 
 Following the completion of this assignment, you will be assigned three
 students' component brainstorming assignments for review. Your job during the
@@ -360,8 +402,6 @@ PDF to read this rubric as a table).
 If you'd like to give feedback for this assignment (or any assignment, really),
 make use of [this survey][survey]. Your feedback helps make assignments
 better for future students.
-
-<!-- TODO: follow the link to share your feedback then delete this comment -->
 
 [example-components]: https://therenegadecoder.com/code/the-never-ending-list-of-small-programming-project-ideas/
 [markdown-to-pdf-guide]: https://therenegadecoder.com/blog/how-to-convert-markdown-to-a-pdf-3-quick-solutions/

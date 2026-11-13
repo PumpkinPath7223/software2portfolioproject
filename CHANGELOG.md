@@ -10,6 +10,32 @@ the following form: YYYY.0M.0D.
 
 - Fixed an issue where the course URLs dropped the `web-sw1` paths
 
+## [2026.11.12]
+
+### Added
+
+- Designed test suite for Playlist component
+- Designed two different use cases for Playlist component
+
+## [2026.11.11]
+
+### Added
+
+- Designed abstract class for Playlist component
+- Designed kernel implementation for Playlist component (Playlist1L)
+
+## [2026.11.10]
+
+### Added
+
+- Designed a Playlist component (position-based sequence of songs)
+- Designed a PlaybackQueue component (history and up-next song queue)
+- Designed a SongLibrary component (title-keyed collection of songs)
+- Designed a proof of concept for Playlist component
+- Designed kernel and enhanced interfaces for Playlist component
+
+- Designed abstract class for Playlist component
+
 ## [2026.07.06]
 
 ### Added

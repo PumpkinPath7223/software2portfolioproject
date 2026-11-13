@@ -1,8 +1,8 @@
 # Portfolio Part 6: Finishing Touches
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) and delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) and delete this comment -->
-- **Due Date**: <!-- TODO: fill out with due date and time (e.g., 10/17 @ 3:10 PM EST) and delete this comment -->
+- **Name**: Pratyush Mundadi
+- **Dot Number**: mundadi.1
+- **Due Date**: 11/13 @ 11:59 PM EST
 
 ## Assignment Overview
 
@@ -49,8 +49,6 @@ Many of these additional techniques are somewhat out of the scope of this
 course, but just knowing about them could set you up for long term success.
 
 ## Assignment Checklist
-
-<!-- TODO: browse the checklist then delete this comment -->
 
 To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
@@ -140,8 +138,6 @@ merges, you will need to pull the changes from main into your current branch
 to see them. If you don't like this workflow, you may try following the
 rebase strategies described [here](https://stackoverflow.com/questions/35790561/working-while-waiting-for-pending-pr)
 and [here](https://stackoverflow.com/questions/18021888/continue-working-on-a-git-branch-after-making-a-pull-request).
-
-<!-- TODO: make a new branch from main then delete this comment -->
 
 ## Assignment Tasks
 
@@ -307,18 +303,18 @@ Take some time to fill them out honestly.
 > complete the portfolio project, how much better (or worse) do you think you
 > understand software development and why?
 
-<!-- TODO: discuss -->
+I have a better understanding of software development because I had to design an entire component rather than just complete individual methods. Building my Music Playlist component helped me understand how interfaces, abstract classes, and implementations work together. It also showed me how much planning goes into software before actually writing code.
 
 > Also, did the portfolio project surface any gaps in your own knowledge of
 > software development. If so, what are those gaps and how did you address them?
 
-<!-- TODO: discuss -->
+One gap was understanding how to structure an entire component from scratch, especially deciding which methods belonged in the kernel versus the enhanced interface. I also ran into issues with Java version compatibility and setting up my development environment. I addressed these problems by reviewing course materials, researching errors, and debugging until everything worked.
 
 > Finally, as a part of completing the portfolio project, to what extent has
 > your perspective of software development changed, if at all? In other words,
 > is software development something you still enjoy? If not, why not?
 
-<!-- TODO: discuss -->
+Not a huge shift, honestly. I already assumed real software was messier than homework. What did change is how much I liked the design part: picking a representation and writing the convention and correspondence felt like actual engineering. I still enjoy this. There was a solid hour fighting the Java 21 vs. 17 class file error where I wanted to give up, but once that was fixed the rest felt fine.
 
 > One of the challenges of completing the portfolio project is picking up a lot
 > of skills on your own. Some of these skills are, of course, software skills.
@@ -326,29 +322,31 @@ Take some time to fill them out honestly.
 > this process. Therefore, the first question is what skills did you pick up
 > through this process?
 
-<!-- TODO: discuss -->
+I improved my ability to design software independently, especially using interfaces, inheritance, and abstraction. I also gained experience documenting design decisions, working with Git and GitHub, and troubleshooting Java errors. Beyond technical skills, I improved my problem-solving skills and learned how to approach a larger project without being given step-by-step instructions.
 
 > The follow-up question is: could you rephrase these skills you picked up
 > as bullet points that you could put on a resume? Try it below.
 
-<!-- TODO: discuss -->
+- Designed and implemented a Java Music Playlist software component from scratch using object-oriented programming principles.
+
+- Developed kernel and enhanced interfaces, an abstract class, and a concrete implementation following design-by-contract principles.
+
+- Applied software testing, debugging, documentation, and Git version control throughout the development process.
 
 > Next, how has working on this project affected your career trajectory?
 > In other words, do you now hate the topic you picked? Or, are you even more
 > interested in it? Both outcomes are valuable to your personal development.
 
-<!-- TODO: discuss -->
+This project reinforced my interest in software development, especially the design and problem-solving aspects. Although my main interests are in machine learning, robotics, and embedded systems, I recognize that strong software engineering skills are important in all three fields. The project made me more interested in building larger software systems.
 
 > Finally, consider the skills you've picked up and your current career
 > trajectory. What are some things you could do to continue on your
 > career trajectory? Also, who are some mentors you could contact to help
 > you stay on your path?
 
-<!-- TODO: discuss -->
+I plan to continue developing my programming skills by working on personal projects, contributing to research, and pursuing software engineering internships. I also want to apply what I learned about component design to projects involving machine learning and robotics. Professors like Dr. Grifski, research advisors, and experienced software engineers would be valuable mentors who could provide feedback and career guidance.
 
 ### Changelog
-
-<!-- TODO: update CHANGELOG then delete this comment -->
 
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
@@ -373,7 +371,6 @@ the following form: YYYY.0M.0D.
 ### Updated
 
 - Changed design to include ...
-
 ```
 
 Here `YYYY.MM.DD` would be the date of your submission, such as 2024.04.21.
@@ -383,8 +380,6 @@ like to accomplish that, you will need to make GitHub releases after each pull
 request merge (or at least tag your commits). This is not required.
 
 ### Submission
-
-<!-- TODO: read the submission instructions then delete this comment -->
 
 Assuming that your project is in a GitHub repo somewhere and your changes are on
 a proof-of-concept branch, then what we'll want you to do is create a pull
@@ -435,7 +430,5 @@ PDF to read this rubric as a table).
 If you'd like to give feedback for this assignment (or any assignment, really),
 make use of [this survey][survey]. Your feedback helps make assignments
 better for future students.
-
-<!-- TODO: follow the link to share your feedback then delete this comment -->
 
 [survey]: https://forms.gle/dumXHo6A4Enucdkq9
